@@ -27,7 +27,6 @@ int ConsoleMain(int argc, const char** argv) {
   }
 
   async::Loop loop(&kAsyncLoopConfigNeverAttachToThread);
-  loop.GetState();
 
   fsl::FDWaiter input_waiter(loop.dispatcher());
 
