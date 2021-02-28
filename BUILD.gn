@@ -1,0 +1,34 @@
+import("//src/sys/build/components.gni")
+
+executable("bin") {
+  output_name = "esh"
+
+  sources = [ "main.cc" ]
+
+  deps = [
+    #":lib",
+    "//sdk/lib/syslog/cpp",
+    "//zircon/system/ulib/async-loop:async-loop-cpp",
+    "//zircon/system/ulib/async-loop:async-loop-default",
+    "//src/lib/fsl",
+    "//src/lib/line_input",
+    "//zircon/public/lib/async-cpp",
+    "//zircon/system/ulib/cmdline",
+  ]
+}
+
+fuchsia_shell_package("eggshell-shell") {
+  deps = [ ":bin" ]
+}
+
+fuchsia_component("component") {
+  component_name = "eggshell"
+  manifest = "meta/eggshell.cmx"
+  deps = [ ":bin" ]
+}
+
+fuchsia_package("eggshell") {
+  deps = [
+    ":component",
+  ]
+}
