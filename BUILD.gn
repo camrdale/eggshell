@@ -8,12 +8,15 @@ executable("bin") {
   deps = [
     #":lib",
     "//sdk/lib/syslog/cpp",
+    "//sdk/lib/svc",
     "//zircon/system/ulib/async-loop:async-loop-cpp",
     "//zircon/system/ulib/async-loop:async-loop-default",
     "//src/lib/fsl",
     "//src/lib/line_input",
     "//zircon/public/lib/async-cpp",
     "//zircon/system/ulib/cmdline",
+    "//sdk/lib/sys/cpp",
+    "//src/lib/fxl",
   ]
 }
 
