@@ -2,6 +2,8 @@
 
 EggShell is a command-line interface shell for Fuchsia.
 
+## Installing
+
 Clone the EggShell repo into your Fuchsia source tree. For example,
 from the fuchsia root directory, run:
 
@@ -27,4 +29,16 @@ have a connected device or emulator, and `fx serve` is running):
 
 ```
 fx shell esh
+```
+
+## Features
+
+### Commands
+
+#### run
+
+Run a Fuchsia component. For example:
+
+```
+$ run fuchsia-pkg://fuchsia.com/rolldice#meta/rolldice.cmx
 ```
